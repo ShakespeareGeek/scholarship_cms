@@ -1,0 +1,15 @@
+= semantic_form_for @scholarship_provider do |f|
+  = f.inputs do
+    =f.input :name
+    =f.input :description
+    =f.input :url
+    
+    #scholarships
+      %h3 Scholarships
+      = f.semantic_fields_for :scholarships do |scholarship|
+        = render 'scholarship_fields', :f => scholarship
+      .links
+        = link_to_add_association 'add scholarship', f, :scholarships, :render_options => {:wrapper => 'inline' }
+        
+    =f.buttons
+    

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  provider_id: 1
+  name: MyString
+  description: MyText
+  requirements: MyText
+  award_size: MyString
+  deadline_date: 2012-07-23
+  deadline_comment: MyString
+  application_url: MyString
+  renewable: false
+
+two:
+  provider_id: 1
+  name: MyString
+  description: MyText
+  requirements: MyText
+  award_size: MyString
+  deadline_date: 2012-07-23
+  deadline_comment: MyString
+  application_url: MyString
+  renewable: false

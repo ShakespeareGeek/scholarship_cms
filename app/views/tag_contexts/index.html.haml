@@ -1,0 +1,21 @@
+- model_class = TagContext
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:label)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @tag_contexts.each do |tag_context|
+      %tr
+        %td= link_to tag_context.id, tag_context_path(tag_context)
+        %td= tag_context.label
+        %td=l tag_context.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_tag_context_path(tag_context), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), tag_context_path(tag_context), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_tag_context_path, :class => 'btn btn-primary'
