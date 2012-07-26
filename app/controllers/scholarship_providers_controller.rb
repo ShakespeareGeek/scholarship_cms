@@ -1,14 +1,11 @@
 class ScholarshipProvidersController < ApplicationController
-  respond_to :html, :json
+  respond_to :html, :json, :xml
   # GET /scholarship_providers
   # GET /scholarship_providers.xml
   def index
     @scholarship_providers = ScholarshipProvider.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @scholarship_providers }
-    end
+    respond_with @scholarship_providers
   end
 
   # GET /scholarship_providers/1
@@ -16,10 +13,7 @@ class ScholarshipProvidersController < ApplicationController
   def show
     @scholarship_provider = ScholarshipProvider.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @scholarship_provider }
-    end
+    respond_with @scholarship_provider
   end
 
   # GET /scholarship_providers/new
