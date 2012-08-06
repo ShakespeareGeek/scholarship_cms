@@ -1,56 +1,9 @@
-= form_for @scholarship, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
-    = f.label :provider_id, :class => 'control-label'
-    .controls
-      = f.number_field :provider_id, :class => 'number_field'
-  .control-group
-    = f.label :name, :class => 'control-label'
-    .controls
-      = f.text_field :name, :class => 'text_field'
-  .control-group
-    = f.label :description, :class => 'control-label'
-    .controls
-      = f.text_area :description, :class => 'text_area'
-  .control-group
-    = f.label :requirements, :class => 'control-label'
-    .controls
-      = f.text_area :requirements, :class => 'text_area'
-  .control-group
-    = f.label :award_size, :class => 'control-label'
-    .controls
-      = f.text_field :award_size, :class => 'text_field'
-  .control-group
-    = f.label :deadline_date, :class => 'control-label'
-    .controls
-      = f.date_select :deadline_date, :class => 'date_select'
-  .control-group
-    = f.label :deadline_comment, :class => 'control-label'
-    .controls
-      = f.text_field :deadline_comment, :class => 'text_field'
-  .control-group
-    = f.label :application_url, :class => 'control-label'
-    .controls
-      = f.text_field :application_url, :class => 'text_field'
-  .control-group
-    = f.label :renewable, :class => 'control-label'
-    .controls
-      = f.check_box :renewable, :class => 'check_box'
-  .control-group
-    = f.label :number_of_awards, :class => 'control-label'
-    .controls
-      = f.text_field :number_of_awards, :class => 'text_field'
-  .control-group
-    = f.label :one_time, :class => 'control-label'
-    .controls
-      = f.check_box :one_time, :class => 'check_box'
-  .control-group
-    = f.label :award_min, :class => 'control-label'
-    .controls
-      = f.number_field :award_min, :class => 'number_field'
-  .control-group
-    = f.label :award_max, :class => 'control-label'
-    .controls
-      = f.number_field :award_max, :class => 'number_field'
-  .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), scholarships_path, :class => 'btn'
+= semantic_form_for @scholarship do |f|
+  = f.inputs do
+    =f.input :provider
+    =f.input :name
+    =f.input :description
+    =f.input :url
+    
+    =f.buttons
+

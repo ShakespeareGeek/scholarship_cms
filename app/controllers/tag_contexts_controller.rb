@@ -1,24 +1,18 @@
 class TagContextsController < ApplicationController
+  respond_to :html, :xml, :json
+  
   # GET /tag_contexts
   # GET /tag_contexts.xml
   def index
     @tag_contexts = TagContext.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tag_contexts }
-    end
+    respond_with @tag_contexts
   end
 
   # GET /tag_contexts/1
   # GET /tag_contexts/1.xml
   def show
     @tag_context = TagContext.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @tag_context }
-    end
+    respond_with @tag_context
   end
 
   # GET /tag_contexts/new

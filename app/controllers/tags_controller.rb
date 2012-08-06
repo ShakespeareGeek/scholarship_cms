@@ -1,24 +1,22 @@
 class TagsController < ApplicationController
+  respond_to :html, :xml, :json
   # GET /tags
   # GET /tags.xml
   def index
-    @tags = Tag.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tags }
+    @context = TagContext.find_by_label(params[:context])
+    if @context
+      @tags = @context.tags
+    else
+      @tags = Tag.all
     end
+    respond_with @tags
   end
 
   # GET /tags/1
   # GET /tags/1.xml
   def show
     @tag = Tag.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @tag }
-    end
+    respond_with @tag
   end
 
   # GET /tags/new

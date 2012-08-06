@@ -4,7 +4,6 @@ class ScholarshipProvidersController < ApplicationController
   # GET /scholarship_providers.xml
   def index
     @scholarship_providers = ScholarshipProvider.all
-
     respond_with @scholarship_providers
   end
 
@@ -12,7 +11,6 @@ class ScholarshipProvidersController < ApplicationController
   # GET /scholarship_providers/1.xml
   def show
     @scholarship_provider = ScholarshipProvider.find(params[:id])
-
     respond_with @scholarship_provider
   end
 
