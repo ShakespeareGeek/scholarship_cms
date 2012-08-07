@@ -10,7 +10,7 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.xml
   def show
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find_by_permalink(params[:id])
     respond_with @tag, :include=>:scholarships
   end
 

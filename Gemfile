@@ -17,6 +17,7 @@ gem 'cocoon'
 gem "twitter-bootstrap-rails"
 
 gem 'best_in_place'
+gem 'has_permalink'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
