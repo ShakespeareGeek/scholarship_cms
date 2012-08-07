@@ -3,7 +3,12 @@ class ScholarshipsController < ApplicationController
   # GET /scholarships
   # GET /scholarships.xml
   def index
-    @scholarships = Scholarship.all
+    # There's three ways to hit this page -- either all scholarships (no params), scholarships for a tag (tag_id),
+    # or scholarships for a provider (scholarship_provider_id).  Probably a cleaner way to do this.
+    @scholarships = params[:tag_id].nil? ? Scholarship.all : Tag.find(params[:tag_id]).scholarships
+    if params[:scholarship_provider_id]
+      @scholarships  = ScholarshipProvider.find(params[:scholarship_provider_id]).scholarships
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @scholarships }

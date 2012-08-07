@@ -3,12 +3,7 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.xml
   def index
-    @context = TagContext.find_by_label(params[:context])
-    if @context
-      @tags = @context.tags
-    else
-      @tags = Tag.all
-    end
+    @tags = params[:tag_context_id].nil? ? Tag.all : Tag.where(:tag_context_id=>params[:tag_context_id])
     respond_with @tags
   end
 

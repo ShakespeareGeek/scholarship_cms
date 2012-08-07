@@ -7,6 +7,11 @@ class TagContextsController < ApplicationController
     @tag_contexts = TagContext.all
     respond_with @tag_contexts
   end
+  
+  def list
+    @tags = TagContext.find_by_label("List").tags
+    respond_with @tags
+  end
 
   # GET /tag_contexts/1
   # GET /tag_contexts/1.xml

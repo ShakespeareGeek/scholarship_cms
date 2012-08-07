@@ -1,7 +1,13 @@
 ScholarshipDemo::Application.routes.draw do
-  resources :tags
+  resources :tags do
+    resources :scholarships
+  end
 
-  resources :tag_contexts
+  resources :tag_contexts do
+    resources :tags do
+      resources :scholarships
+    end
+  end
 
 
   resources :scholarship_providers do
@@ -9,6 +15,8 @@ ScholarshipDemo::Application.routes.draw do
   end
   
   resources :scholarships
+  
+  match '/lists' => 'tag_contexts#list'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
