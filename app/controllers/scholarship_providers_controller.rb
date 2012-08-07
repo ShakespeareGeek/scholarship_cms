@@ -11,7 +11,7 @@ class ScholarshipProvidersController < ApplicationController
   # GET /scholarship_providers/1.xml
   def show
     @scholarship_provider = ScholarshipProvider.find(params[:id])
-    respond_with @scholarship_provider
+    respond_with @scholarship_provider, :include=>:scholarships
   end
 
   # GET /scholarship_providers/new

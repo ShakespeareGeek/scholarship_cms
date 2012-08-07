@@ -16,8 +16,8 @@ class TagContextsController < ApplicationController
   # GET /tag_contexts/1
   # GET /tag_contexts/1.xml
   def show
-    @tag_context = TagContext.find(params[:id])
-    respond_with @tag_context
+    @tag_context = TagContext.find_by_id(params[:id]) || TagContext.find_by_label(params[:id])
+    respond_with @tag_context, :include=>:tags
   end
 
   # GET /tag_contexts/new

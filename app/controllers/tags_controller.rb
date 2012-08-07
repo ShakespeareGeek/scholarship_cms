@@ -11,7 +11,7 @@ class TagsController < ApplicationController
   # GET /tags/1.xml
   def show
     @tag = Tag.find(params[:id])
-    respond_with @tag
+    respond_with @tag, :include=>:scholarships
   end
 
   # GET /tags/new
