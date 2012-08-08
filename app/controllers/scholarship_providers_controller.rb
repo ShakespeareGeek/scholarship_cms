@@ -4,7 +4,7 @@ class ScholarshipProvidersController < ApplicationController
   # GET /scholarship_providers.xml
   def index
     @scholarship_providers = ScholarshipProvider.all
-    respond_with @scholarship_providers
+    respond_with @scholarship_providers, :include=>:scholarships
   end
 
   # GET /scholarship_providers/1
