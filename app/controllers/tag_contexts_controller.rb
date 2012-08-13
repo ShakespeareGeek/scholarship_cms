@@ -10,7 +10,7 @@ class TagContextsController < ApplicationController
   
   def list
     @tags = TagContext.find_by_label("List").tags
-    respond_with @tags
+    respond_with @tags, :include=>{:tags=>{:include=>:scholarships}}
   end
 
   # GET /tag_contexts/1
