@@ -1,4 +1,4 @@
 .nested-fields
   = f.inputs do
-    = f.input :label
-  = link_to_remove_association "remove tag", f
+    = link_to_remove_association "Remove #{@tag_context.label}", f, :render_options =>{:wrapper=>:bootstrap}
+    = f.input :label, :input_html => { :size => 20 }

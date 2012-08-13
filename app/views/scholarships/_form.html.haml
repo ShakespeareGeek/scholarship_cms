@@ -1,9 +1,16 @@
 = semantic_form_for @scholarship do |f|
   = f.inputs do
-    =f.input :provider
-    =f.input :name
-    =f.input :description
-    =f.input :url
+    =f.input :provider, :required=>true
+    =f.input :name, :required=>true
+    =f.input :description, :required=>true
+    =f.input :requirements
+    =f.input :application_url, :required=>true
     
+  =f.inputs do
+    %h3  Deadline - Both are optional
+    =f.input :deadline_date
+    =f.input :deadline_comment
+    
+  =f.inputs do
     =f.buttons
 

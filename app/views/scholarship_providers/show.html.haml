@@ -13,6 +13,10 @@
 %p
   %strong= model_class.human_attribute_name(:url) + ': '
   = best_in_place @scholarship_provider, :url, :nil=>"Click to edit URL"
+
+%p
+  %strong= model_class.human_attribute_name(:featured_position) + ': '
+  = best_in_place @scholarship_provider, :featured_position, :nil=>"0"
   
 %p
   %strong Scholarships

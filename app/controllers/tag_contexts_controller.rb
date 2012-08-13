@@ -17,7 +17,7 @@ class TagContextsController < ApplicationController
   # GET /tag_contexts/1.xml
   def show
     @tag_context = TagContext.find_by_permalink(params[:id]) 
-    respond_with @tag_context, :include=>:tags
+    respond_with @tag_context, :include=>{:tags=>{:include=>:scholarships}}
   end
 
   # GET /tag_contexts/new
@@ -33,7 +33,7 @@ class TagContextsController < ApplicationController
 
   # GET /tag_contexts/1/edit
   def edit
-    @tag_context = TagContext.find(params[:id])
+    @tag_context = TagContext.find_by_permalink(params[:id])
   end
 
   # POST /tag_contexts
@@ -55,7 +55,7 @@ class TagContextsController < ApplicationController
   # PUT /tag_contexts/1
   # PUT /tag_contexts/1.xml
   def update
-    @tag_context = TagContext.find(params[:id])
+    @tag_context = TagContext.find_by_permalink(params[:id])
 
     respond_to do |format|
       if @tag_context.update_attributes(params[:tag_context])
@@ -71,7 +71,7 @@ class TagContextsController < ApplicationController
   # DELETE /tag_contexts/1
   # DELETE /tag_contexts/1.xml
   def destroy
-    @tag_context = TagContext.find(params[:id])
+    @tag_context = TagContext.find_by_permalink(params[:id])
     @tag_context.destroy
 
     respond_to do |format|

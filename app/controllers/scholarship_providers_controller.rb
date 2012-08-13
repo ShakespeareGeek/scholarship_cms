@@ -3,7 +3,7 @@ class ScholarshipProvidersController < ApplicationController
   # GET /scholarship_providers
   # GET /scholarship_providers.xml
   def index
-    @scholarship_providers = ScholarshipProvider.all
+    @scholarship_providers = ScholarshipProvider.order("featured_position, name")
     respond_with @scholarship_providers, :include=>:scholarships
   end
 
@@ -54,6 +54,7 @@ class ScholarshipProvidersController < ApplicationController
     respond_to do |format|
       if @scholarship_provider.update_attributes(params[:scholarship_provider])
         format.json { respond_with_bip(@scholarship_provider) }
+        format.html { redirect_to(@scholarship_provider, :notice => 'Scholarship provider was successfully updated.') }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @scholarship_provider.errors, :status => :unprocessable_entity }

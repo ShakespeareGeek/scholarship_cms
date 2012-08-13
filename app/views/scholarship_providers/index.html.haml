@@ -8,6 +8,7 @@
       %th= model_class.human_attribute_name(:url)
       %th= model_class.human_attribute_name(:description)
       %th Number of Scholarships
+      %th Featured Position
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @scholarship_providers.each do |scholarship_provider|
@@ -16,6 +17,7 @@
         %td= scholarship_provider.url
         %td= scholarship_provider.description
         %td= scholarship_provider.scholarships.count
+        %td= scholarship_provider.featured_position
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_scholarship_provider_path(scholarship_provider), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), scholarship_provider_path(scholarship_provider), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'

@@ -2,11 +2,15 @@
   = f.inputs do
     =f.input :label
 
+  = f.inputs do
     #tags
-      %h3 Tags
-      = f.semantic_fields_for :tags do |tag|
-        = render 'tag_fields', :f => tag
+    %h3 #{@tag_context.label.pluralize.humanize}
+    = f.semantic_fields_for :tags do |tag|
+      = render 'tag_fields', :f => tag
+    
+    =f.inputs do
       .links
-        = link_to_add_association 'add tag', f, :tags, :render_options => {:wrapper => 'inline' }
-        
-    =f.buttons
+        = link_to_add_association "Add #{@tag_context.label}", f, :tags, :render_options => {:wrapper => 'bootstrap' }
+
+    =f.inputs do
+      =f.buttons
