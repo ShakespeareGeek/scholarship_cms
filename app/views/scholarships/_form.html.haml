@@ -12,5 +12,9 @@
     =f.input :deadline_comment
     
   =f.inputs do
+    %h3 Which List?
+    =f.input :tags, :as=>:select
+    
+  =f.inputs do
     =f.buttons
 
