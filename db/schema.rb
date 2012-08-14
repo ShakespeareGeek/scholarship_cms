@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120810140308) do
+ActiveRecord::Schema.define(:version => 20120814144933) do
 
   create_table "provider_contacts", :force => true do |t|
     t.integer  "provider_id"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(:version => 20120810140308) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
+    t.string   "teaser"
+    t.text     "writeup"
   end
 
   add_index "tags", ["permalink"], :name => "index_tags_on_permalink"
