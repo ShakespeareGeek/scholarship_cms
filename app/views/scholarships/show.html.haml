@@ -5,7 +5,12 @@
 %p
   %strong= model_class.human_attribute_name(:provider_id) + ':'
   %br
-  = @scholarship.provider_id
+  = link_to @scholarship.provider.name, @scholarship.provider
+%p
+  %strong Tags / Lists
+  %ul
+    - @scholarship.tags.each do |t|
+      %li= "#{t.tag_context.label} : #{t.label}"
 %p
   %strong= model_class.human_attribute_name(:name) + ':'
   %br

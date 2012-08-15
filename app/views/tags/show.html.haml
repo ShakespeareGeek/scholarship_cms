@@ -9,7 +9,7 @@
 %p
   %strong= model_class.human_attribute_name(:tag_context_id) + ':'
   %br
-  = @tag.tag_context_id
+  = link_to @tag.tag_context.name, @tag.tag_context
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), tags_path, :class => 'btn'
