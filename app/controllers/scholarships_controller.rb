@@ -20,7 +20,7 @@ class ScholarshipsController < ApplicationController
     def search
       # There's three ways to hit this page -- either all scholarships (no params), scholarships for a tag (tag_id),
       # or scholarships for a provider (scholarship_provider_id).  Probably a cleaner way to do this.
-      @scholarships = Scholarship.where("name like ? or description like ?", params[:query], params[:query])
+      @scholarships = Scholarship.where("name like ? or description like ?", "%#{params[:query]}%", "%#{params[:query]}%")
       respond_to do |format|
         format.html # new.html.erb
         format.xml  { render :xml => @scholarships }
