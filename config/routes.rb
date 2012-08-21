@@ -14,10 +14,8 @@ ScholarshipDemo::Application.routes.draw do
     resources :scholarships
   end
   
-  resources :scholarships do
-    match '/search/:query' => 'scholarships#search'
-  end
-  
+  resources :scholarships
+  match 'scholarships/search/:query' => 'scholarships#search'
   match '/lists' => 'tag_contexts#list'
 
   # The priority is based upon order of creation:
