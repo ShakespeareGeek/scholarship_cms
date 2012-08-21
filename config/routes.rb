@@ -1,4 +1,6 @@
 ScholarshipDemo::Application.routes.draw do
+  resources :suggestions
+
   resources :tags do
     resources :scholarships
   end

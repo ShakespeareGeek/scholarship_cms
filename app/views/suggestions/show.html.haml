@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @suggestion.name
+%p
+  %b Category:
+  = @suggestion.category
+%p
+  %b Description:
+  = @suggestion.description
+%p
+  %b Url:
+  = @suggestion.url
+%p
+  %b Submitter email:
+  = @suggestion.submitter_email
+
+= link_to 'Edit', edit_suggestion_path(@suggestion)
+\|
+= link_to 'Back', suggestions_path
