@@ -10,6 +10,9 @@ class TagContextsController < ApplicationController
   
   def list
     @tags = TagContext.find_by_label("List").tags
+    if params[:delay]
+      sleep(params[:delay])
+    end
     respond_with @tags, :include=>{:tags=>{:include=>:scholarships}}
   end
 
