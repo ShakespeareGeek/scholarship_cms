@@ -14,7 +14,9 @@ ScholarshipDemo::Application.routes.draw do
     resources :scholarships
   end
   
-  resources :scholarships
+  resources :scholarships do
+    match '/search/:query' => 'scholarships#search'
+  end
   
   match '/lists' => 'tag_contexts#list'
 
