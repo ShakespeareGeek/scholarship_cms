@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scholarship Manager</title>
+  <link href="main.css" media="all" rel="stylesheet" type="text/css" />
+  <script src="/assets/application.js" type="text/javascript"></script>
+  <script src="/assets/cocoon.js" type="text/javascript"></script>
+  
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="3QGlKmqbOvW3lXISCyyuIsv4lAt2P3OrVimRwZFjjUA=" name="csrf-token" />
+</head>
+<body>
+	<div class='new_suggestion'>
+		<img alt="Pencil_icn" src="icon_pencil.png" />
+		<h1>Suggest a Scholarship</h1>
+		<h2>Do you know of a scholarship that does not currently exist in our database?</h2>
+		<p>Tell us about it. Fill out the form below and enlighten us!</p>
+		<form accept-charset="UTF-8" action="/suggestions" class="formtastic suggestion" id="new_suggestion" method="post" novalidate="novalidate">
+			<div style="margin:0;padding:0;display:inline">
+				<input name="utf8" type="hidden" value="&#x2713;" />
+				<input name="authenticity_token" type="hidden" value="3QGlKmqbOvW3lXISCyyuIsv4lAt2P3OrVimRwZFjjUA=" />
+			</div>
+			<fieldset class="inputs">
+				<ol>
+					<li class="string input optional stringish" id="suggestion_name_input">
+						<label class=" label" for="suggestion_name">Name</label>
+						<input id="suggestion_name" maxlength="255" name="suggestion[name]" size="40" type="text" />
+					</li>
+					<li class="string input optional stringish" id="suggestion_category_input">
+						<label class=" label" for="suggestion_category">Category</label>
+						<input id="suggestion_category" maxlength="255" name="suggestion[category]" size="40" type="text" />
+					</li>
+					<li class="text input optional" id="suggestion_description_input">
+						<label class=" label" for="suggestion_description">Description</label>
+						<textarea cols="40" id="suggestion_description" name="suggestion[description]" rows="4"></textarea>
+					</li>
+					<li class="url input optional stringish" id="suggestion_url_input">
+						<label class=" label" for="suggestion_url">Url</label>
+						<input id="suggestion_url" maxlength="255" name="suggestion[url]" size="40" type="url" />
+					</li>
+					<li class="email input optional stringish" id="suggestion_submitter_email_input">
+						<label class=" label" for="suggestion_submitter_email">Email</label>
+						<input id="suggestion_submitter_email" maxlength="255" name="suggestion[submitter_email]" size="40" type="email" />
+					</li>
+				</ol>
+			</fieldset>
+			<fieldset class="buttons">
+				<ol>
+					<li class="commit button">
+						<input class="create" name="commit" type="submit" />
+					</li>
+				</ol>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
