@@ -69,7 +69,7 @@ ScholarshipDemo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
- root :to => "scholarship_providers#index"
+ root :to => "tag_contexts#index"
 
   # See how all your routes lay out with "rake routes"
 

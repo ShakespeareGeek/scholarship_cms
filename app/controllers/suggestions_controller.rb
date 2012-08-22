@@ -27,7 +27,7 @@ class SuggestionsController < ApplicationController
     @suggestion = Suggestion.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout=>"new_suggestion" }# new.html.erb
       format.json { render json: @suggestion }
     end
   end

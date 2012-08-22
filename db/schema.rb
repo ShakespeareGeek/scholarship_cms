@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817193718) do
+ActiveRecord::Schema.define(:version => 20120821034514) do
 
   create_table "provider_contacts", :force => true do |t|
     t.integer  "provider_id"
@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(:version => 20120817193718) do
   create_table "states", :force => true do |t|
     t.string   "name"
     t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "suggestions", :force => true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.text     "description"
+    t.string   "url"
+    t.string   "submitter_email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
