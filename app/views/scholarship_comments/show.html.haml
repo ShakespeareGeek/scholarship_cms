@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Body:
+  = @scholarship_comment.body
+%p
+  %b Author:
+  = @scholarship_comment.author
+%p
+  %b Scholarship:
+  = @scholarship_comment.scholarship_id
+
+= link_to 'Edit', edit_scholarship_comment_path(@scholarship_comment)
+\|
+= link_to 'Back', scholarship_comments_path

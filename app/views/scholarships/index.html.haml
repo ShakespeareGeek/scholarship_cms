@@ -11,8 +11,8 @@
   %tbody
     - @scholarships.each do |scholarship|
       %tr
-        %td= link_to scholarship.provider.name, scholarship.provider
-        %td= link_to scholarship.name, scholarship, :title=>scholarship.description
+        %td= scholarship.provider.name
+        %td= link_to scholarship.name, edit_scholarship_path(scholarship), :title=>scholarship.description
         %td= scholarship.application_url
         %td
           = link_to t('.destroy', :default => t("helpers.links.destroy")), scholarship_path(scholarship), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'

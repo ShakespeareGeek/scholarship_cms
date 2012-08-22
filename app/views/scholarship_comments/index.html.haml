@@ -1,0 +1,23 @@
+%h1 Listing scholarship_comments
+
+%table
+  %tr
+    %th Body
+    %th Author
+    %th Scholarship
+    %th
+    %th
+    %th
+
+  - @scholarship_comments.each do |scholarship_comment|
+    %tr
+      %td= scholarship_comment.body
+      %td= scholarship_comment.author
+      %td= scholarship_comment.scholarship_id
+      %td= link_to 'Show', scholarship_comment
+      %td= link_to 'Edit', edit_scholarship_comment_path(scholarship_comment)
+      %td= link_to 'Destroy', scholarship_comment, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Scholarship comment', new_scholarship_comment_path

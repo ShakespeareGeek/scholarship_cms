@@ -13,14 +13,14 @@ class TagContextsController < ApplicationController
     if params[:delay]
       sleep(params[:delay].to_i)
     end
-    respond_with @tags, :include=>{:tags=>{:include=>:scholarships}}
+    respond_with @tags, :include=>{:tags=>{:include=>{:scholarships=>{:include=>:comments}}}}
   end
 
   # GET /tag_contexts/1
   # GET /tag_contexts/1.xml
   def show
     @tag_context = TagContext.find_by_permalink(params[:id]) 
-    respond_with @tag_context, :include=>{:tags=>{:include=>:scholarships}}
+    respond_with @tag_context, :include=>{:tags=>{:include=>{:scholarships=>{:include=>:comments}}}}
   end
 
   # GET /tag_contexts/new
