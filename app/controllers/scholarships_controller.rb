@@ -9,12 +9,11 @@ class ScholarshipsController < ApplicationController
     if params[:scholarship_provider_id]
       @scholarships  = ScholarshipProvider.find(params[:scholarship_provider_id]).scholarships
     end
-    respond_to do |format|
+   respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @scholarships }
-      format.json  { render :json => @scholarships, :include=>@comments }
+      format.json  { render :json => @scholarships, :include=>:comments }
     end
-#    respond_with @scholarships
   end
 
     def search
