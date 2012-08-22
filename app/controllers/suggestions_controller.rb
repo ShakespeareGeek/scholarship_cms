@@ -44,7 +44,7 @@ class SuggestionsController < ApplicationController
 
     respond_to do |format|
       if @suggestion.save
-        format.html { redirect_to @suggestion, notice: 'Suggestion was successfully created.' }
+        format.html { render :layout=>"new_suggestion" }
         format.json { render json: @suggestion, status: :created, location: @suggestion }
       else
         format.html { render action: "new" }
