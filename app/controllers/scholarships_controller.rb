@@ -12,7 +12,7 @@ class ScholarshipsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @scholarships }
-      format.json  { render :json => @scholarships }
+      format.json  { render :json => @scholarships, :include=>@comments }
     end
 #    respond_with @scholarships
   end

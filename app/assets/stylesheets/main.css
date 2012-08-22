@@ -4778,7 +4778,7 @@ div.field, div.actions {
     padding: 0.5em 0;
 }
 input.create {
-	background: url('button_submit_now.png');
+	background: url('/images/button_submit_now.png');
 	border: none;
 	height: 31px;
 	overflow: hidden;
