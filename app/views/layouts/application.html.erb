@@ -22,7 +22,7 @@
           <ul class="nav">
             <li><%= link_to "Providers(#{ScholarshipProvider.count})", scholarship_providers_path %></li>
             <li><%= link_to "Scholarships(#{Scholarship.count})", scholarships_path %></li>
-            <li><%= link_to "Comments(#{ScholarshipComment.count})", scholarships_path %></li>
+            <li><%= link_to "Comments(#{ScholarshipComment.count})", scholarship_comments_path %></li>
             <li><%= link_to "Lists(#{TagContext.count})", tag_contexts_path %></li>
             <li><%= link_to "Tags(#{Tag.count})", tags_path %></li>
             <li><%= link_to "Suggestions(#{Suggestion.count})", suggestions_path %></li>
