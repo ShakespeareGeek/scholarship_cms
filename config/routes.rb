@@ -1,4 +1,6 @@
 ScholarshipDemo::Application.routes.draw do
+  resources :articles
+
   resources :scholarship_comments
 
   resources :suggestions

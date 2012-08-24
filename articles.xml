@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Articles</title>
+    <description>Lots of articles</description>
+    <link>http://scholar.dev/articles</link>
+    <item>
+      <title>Knowing What to Expect about Financial Aid</title>
+      <description>There’s no such thing as completely free money. Scholarship and grant sponsors usually request a measure of commitment from you that begins with the application process.</description>
+      <pubDate>Fri, 24 Aug 2012 14:28:14 +0000</pubDate>
+      <link>http://www.studentadvisor.com/guides/scholarship-secrets</link>
+      <guid>http://www.studentadvisor.com/guides/scholarship-secrets</guid>
+    </item>
+    <item>
+      <title>Top 10 Ways To Get Financing</title>
+      <description>The key to applying for scholarships is to follow each scholarship’s instructions carefully and to be thorough.</description>
+      <pubDate>Fri, 24 Aug 2012 14:28:54 +0000</pubDate>
+      <link>http://www.studentadvisor.com/guides/scholarship-secrets</link>
+      <guid>http://www.studentadvisor.com/guides/scholarship-secrets</guid>
+    </item>
+    <item>
+      <title>Financial Aid First</title>
+      <description>Your first source of money for college is the FAFSA, the Free Application for Federal Student Aid. The application period for the FAFSA begins on January 1st of every year. You should file a FAFSA before you do anything else. For tips on filling out your FAFSA please visit our Guide.</description>
+      <pubDate>Fri, 24 Aug 2012 14:29:31 +0000</pubDate>
+      <link>http://www.studentadvisor.com/guides/scholarship-secrets</link>
+      <guid>http://www.studentadvisor.com/guides/scholarship-secrets</guid>
+    </item>
+  </channel>
+</rss>
